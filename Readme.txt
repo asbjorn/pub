@@ -1,1 +1,0 @@
-Publicly available mini projects
