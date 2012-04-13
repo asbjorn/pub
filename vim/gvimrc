@@ -1,0 +1,18 @@
+" By placing the 'Inconsolata' font in your $HOME/.fonts/ folder, vim 
+" should be able to find it. Or, a system-wide installation. Google for 
+" the font name to download it.
+set guifont=Inconsolata\ 10
+
+" add custom statusline
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
+" Paste SELECTION with S-Insert
+inoremap <S-Insert> <MiddleMouse>
+cnoremap <S-Insert> <MiddleMouse>
+
+" Commands to increase/decrease the font size by '<WINKEY>++ and <WINKEY>+-'
+command! -bar -nargs=0 Bigger  :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)+1','')
+command! -bar -nargs=0 Smaller :let &guifont = substitute(&guifont,'\d\+$','\=submatch(0)-1','')
+
+noremap <M--> :Smaller<CR>
+noremap <M-+> :Bigger<CR>e
